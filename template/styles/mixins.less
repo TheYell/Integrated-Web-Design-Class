@@ -1,0 +1,22 @@
+/* MIX-INS Ace in the Hole*/
+
+#mixins {
+    .paragraph (@pfont_size, @pfont_family, @pmargin){
+        font-size: @pfont_size;
+        font-family: @pfont_family;
+        margin: @pmargin;  
+    }
+    
+    .headertwo (@hfont_family, @h2font_size, @red) {
+        font-family: @hfont_family;
+        font-size: @h2font_size;
+        color: @red;
+    }
+    
+    .tdfooter (position, bottom, width){
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    
+}
