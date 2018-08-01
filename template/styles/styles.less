@@ -2,6 +2,8 @@
 
 @import "mixins.less";
 
+*{box-sizing: content-box;}
+
 /*SIZES*/
 @pfont_size: 1em;
 @h2font_size: 1.3em;
@@ -21,8 +23,8 @@
 
 
 /*MARGINS*/
-@bmargin: 2em;
-@pmargin: 1em;
+@bmargin: .05em;
+@pmargin: 1.2em;
 
 
 
@@ -33,6 +35,11 @@ header{
 
 body {
     margin: @bmargin;
+    background-color: @red;
+}
+
+main{
+    background-color: @white;
 }
 
 h1{
@@ -79,7 +86,7 @@ nav{
     font-size:0.8em; 
     width:100%; 
     background:#f1f1f1;
-    position:absolute; 
+    /*position:absolute;*/ 
     text-align:center; 
     font-size:12px;
 }
@@ -210,6 +217,7 @@ section{
 }
 
 h2{
+    margin: 0.5em;
     #mixins.headertwo(@hfont_family, @h2font_size, @red);
 }
 
@@ -227,11 +235,13 @@ aside{
     font-family: @pfont_family;
     clear: both;
     display: flex;
+    /*border: 1.5px solid @red;*/
 }
 
 footer{
     clear: both;
     font-family: @pfont_family;
+    margin-bottom: 1px;
 }
 
 /*TABLET*/

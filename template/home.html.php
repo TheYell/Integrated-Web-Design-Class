@@ -20,14 +20,12 @@
 <body>
     
     <?php include 'includes/header.inc.html.php'; ?>
-        
-    <?php include 'includes/navigation.inc.html.php'; ?>
+      
+    <main>
+        <?php include 'includes/navigation.inc.html.php'; ?>
     <br>
     <br>
-    
-        
-        <main>
-            
+                
             <article> <!-- Slideshow container -->
                 <h2>Header 2</h2>
             <!-- Full-width images with number and caption text -->
