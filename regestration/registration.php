@@ -31,20 +31,37 @@
       <p>Required fields are marked with an asterisk (*).<p><br>
       <div id="registration">
       <form method="post" action=" ">
+          
         <label for="status">*Athlete or Volunteer:</label>
-        <select size="1" name="option" id="option">
-          <option value="athlete">Athlete</option>
-          <option value="volunteer">Volunteer</option>
-        </select> <br><br>
-        <label for="fname">*First Name:</label>
+            <select size="1" name="option" id="option">
+                <option value="athlete">Athlete</option>
+                <option value="volunteer">Volunteer</option>
+            </select> <br><br>
+        <label for="myfname">*First Name:</label>
           <input type="text" name="fname" id="fname" required><br><br>
-        <label for="lname">*Last Name:</label>
+        <label for="mylname">*Last Name:</label>
           <input type="text" name="lname" id="lname" required><br><br>
-        <label for="email">*Email Address:</label>
+        <label for="myemail">*Email Address:</label>
           <input type="email" name="email" id="email" required><br><br>
-        <label for="comments">Comments or Questions?</label>
-          <textarea name="comments" id="comments" rows="3" cols="30"></textarea><br><br>
-          <input id="submit" type="submit" value="Submit">
+        <label for="phone">*Phone Number:</label>
+          <input type="int" name="phone" id="phone" required><br><br>
+        <label for="event">*Saturday or Sunday:</label>
+            <select size="1" name="option" id="option">
+                <option value="saturday">Athlete</option>
+                <option value="sunday">Volunteer</option>
+            </select> <br><br>
+        <label for="emergencyName">*Emergency Contact Name:</label>
+          <input type="text" name="ename" id="ename" required><br><br>
+        <label for="emergencyNumber">*Emergency Contact Phone:</label>
+          <input type="int" name="enumber" id="enumber" required><br><br>
+        <label for="shirtSize">*Shirt Size S, M, L, XL:</label>
+          <input type="text" name="shirt" id="shirt" required><br><br>
+        <label for="gender">*Gender:</label>
+          <input type="text" name="gender" id="gender" required><br><br>
+        <label for="mycomments">Comments or Questions?</label>
+          <textarea name="mycomments" id="mycomments" rows="3" cols="30"></textarea><br><br>
+          <input id="mysubmit" type="submit" value="Submit">
+          
       </form>
       </div>
         <br><br><br>
