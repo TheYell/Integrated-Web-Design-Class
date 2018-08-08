@@ -1,52 +1,75 @@
 <?php
 
-$servername = "localhost";
-$username = "daniell7_aceUser";
-$password = "Aceinthehole";
-$dbname = "daniell7_aceInTheHole";
-
-$users_status = $_POST['status'];
-$users_fname = $_POST['fname'];
-$users_lname = $_POST['lname'];
-$users_email = $_POST['email'];
-$users_phone = $_POST['phone'];
-$users_event = $POST['event'];
-$users_emergencyName = $_POST['ename'];
-$users_emergencyNumber = $_POST['enumber'];
-$users_shirtSize = $_POST['shirt'];
-$users_gender = $_POST['gender'];
-$users_comments = $_POST['comments'];
-
-//connect to database
 try
 {
-
-  $pdo = new PDO('mysql:host=localhost;dbname=daniell7_aceInTheHole', 'daniell7_aceUser', 'Aceinthehole');
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  $pdo->exec('SET NAMES "utf8"');
+    $pdo = new PDO('mysql:host=localhost;dbname=daniell7_aceInTheHole', 'daniell7_aceUser', 'Aceinthehole');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->exec('SET NAMES "utf8"');
 }
-
-
 catch (PDOException $e)
 {
-  $error = 'Unable to connect to the database server (root index):' . $e->getMessage();
-  include './includes/error.html.php';
-  exit();
-}
-
-
-try{
-$sql ="
-  INSERT INTO `daniell7_aceInTheHole`.`registration` (`id`, `status`, `fname`, `lname`, `email`, `phone`, `event`, `emergencyName`, `emergencyNumber`, `shirtSize`, `gender`, `comments`) 
-  VALUES (NULL, '$users_status', '$users_fname', '$users_lname', '$users_email', '$users_phone', '$users_event', '$users_emergencyName', '$users_emergencyNumber', '$users_shirtSize', '$users_gender', '$users_comments');";
-}
-
-catch (PDOexception $e) {
-    $error = 'Error adding registration' . $e->getMessage();
-    include './includes/error.html.php';
+    $error = 'Unable to connect to the Ace In The Hole database server:' . $e->getMessage();
+    include '../includes/error.html.php';
     exit();
 }
+    
+if(isset($_POST['fname']) and ($_POST['honeypot'] == ''))
+{
+    //these variables will be used in Thankyou page
+    //$honeypot = $_POST['honeypot'];
+    $status = $_POST['status'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $event = $_POST['event'];
+    $emergencyName = $_POST['ename'];
+    $emergencyNumber = $_POST['enumber'];
+    $shirtSize = $_POST['shirt'];
+    $gender = $_POST['gender'];
+    $comments = $_POST['comments'];
+    
+    try
+    {   //database name = :variable name
+        $sql = 'INSERT INTO registration SET
+            status = :status,
+            fname = :fname,
+            lname = :lname,
+            email = :email,
+            phone = :phone,
+            event = :event,
+            emergencyName = :ename,
+            emergencyNumber = :enumber,
+            shirtSize = :shirt,
+            gender = :gender,
+            comments = :comments';
+        $s = $pdo->prepare($sql);
+        $s->bindValue(':status', $_POST['status']);
+        $s->bindValue(':fname', $_POST['fname']);
+        $s->bindValue(':lname', $_POST['lname']);
+        $s->bindValue(':email', $_POST['email']);
+        $s->bindValue(':phone', $_POST['phone']);
+        $s->bindValue(':event', $_POST['event']);
+        $s->bindValue(':ename', $_POST['ename']);
+        $s->bindValue(':enumber', $_POST['enumber']);
+        $s->bindValue(':shirt', $_POST['shirt']);
+        $s->bindValue(':gender', $_POST['gender']);
+        $s->bindValue(':comments', $_POST['comments']);
+        $s->execute();
+    }
+    catch (PDOException $e)
+    {
+        $error = 'Error adding submitted information: ' . $e->getMessage();
+    include '../includes/error.html.php';
+    exit();
+    }
+    
+    //Load the thankyou page to run after the INSERT runs
+    include 'thankyou.php';
+    
+}
 
-include '../includes/success.html.php';
-
-?>
+else 
+{
+    include 'registration.html.php';
+}

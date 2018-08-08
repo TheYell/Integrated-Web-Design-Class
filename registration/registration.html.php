@@ -19,22 +19,9 @@
     
 <body>
     
-    <header>PHP Include Header</header><br>
+    <?php include '../includes/header.inc.html.php'; ?>
     
-    <!--Hamburger-->
-    <nav>
-        <button class="hamburger">&#9776;</button>
-        <button class="cross">&#735;</button>
-    </nav>
-    <div class="menu">
-        <ul>
-            <li><a href= "<?php echo BASE_URL; ?>/">Home</a></li>
-            <li><a href="<?php echo BASE_URL; ?>pageone">LinkOne</a></li>
-            <li><a href="<?php echo BASE_URL; ?>pagetwo">LinkTwo</a></li>
-            <li><a href="<?php echo BASE_URL; ?>pagethree">LinkThree</a></li>
-        </ul>
-    </div>
-    <!--END hamburger-->
+    <?php include '../includes/navigation.inc.html.php'; ?>
     <br>
     <br>
                     
@@ -46,10 +33,7 @@
       <form method="post" action=" ">
           
         <label for="status">*Athlete or Volunteer:</label>
-            <select size="1" name="option" id="option">
-                <option value="athlete">Athlete</option>
-                <option value="volunteer">Volunteer</option>
-            </select> <br><br>
+            <input type="text" name="status" id="status" required><br><br>
         <label for="myfname">*First Name:</label>
           <input type="text" name="fname" id="fname" required><br><br>
         <label for="mylname">*Last Name:</label>
@@ -59,10 +43,7 @@
         <label for="phone">*Phone Number:</label>
           <input type="int" name="phone" id="phone" required><br><br>
         <label for="event">*Saturday or Sunday:</label>
-            <select size="1" name="option" id="option">
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
-            </select> <br><br>
+            <input type="text" name="event" id="event" required><br><br>
         <label for="emergencyName">*Emergency Contact Name:</label>
           <input type="text" name="ename" id="ename" required><br><br>
         <label for="emergencyNumber">*Emergency Contact Phone:</label>
@@ -72,7 +53,7 @@
         <label for="gender">*Gender:</label>
           <input type="text" name="gender" id="gender" required><br><br>
         <label for="mycomments">Comments or Questions?</label>
-          <textarea name="mycomments" id="mycomments" rows="3" cols="30"></textarea><br><br>
+          <textarea name="comments" id="comments" rows="3" cols="30"></textarea><br><br>
           <input id="mysubmit" type="submit" value="Submit">
           
       </form>
@@ -80,7 +61,7 @@
         <br><br><br>
     </main>
     
-    <footer>PHP Include Footer</footer>
+    <?php include '../includes/footer.inc.html.php'; ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../scripts/scripts.js"></script>    
