@@ -5,9 +5,11 @@
 *{box-sizing: content-box;}
 
 /*SIZES*/
-@pfont_size: 1em;
-@h2font_size: 1.3em;
-@h1font_size: 1.5em;
+@pfont_size: 0.95em;
+@h4font_size: 3vw;
+@h3font_size: 4vw;
+@h2font_size: 5vw;
+@h1font_size: 6vw;
 
     
 /*FAMILY*/
@@ -30,7 +32,11 @@
 
 /*SELECTORS*/
 header{
-    font-family: @hfont_family;
+}
+
+.responsive{
+    width: 100%;
+    height: auto;
 }
 
 body {
@@ -43,8 +49,10 @@ main{
 }
 
 h1{
-    font-family: @hfont_family;
-    font-size: @h1font_size;
+    margin: 0.5em;
+    #mixins.headerone(@hfont_family, @h1font_size, @white);
+    text-align: center;
+    letter-spacing: inherit;
 }
 
 nav{
@@ -124,6 +132,7 @@ nav{
     color:@black;
 }
 /*END Hamburger*/
+
 
 
 
@@ -213,12 +222,55 @@ article {
 /*END Slideshow*/
 
 
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+
+
 section{
 }
 
 h2{
-    margin: 0.5em;
+    padding-top: 0.5em;
+    margin-left: 0.4em;
     #mixins.headertwo(@hfont_family, @h2font_size, @red);
+}
+
+h3{
+    margin: 0.7em;
+    #mixins.headerthree(@hfont_family, @h3font_size, @red);
+}
+
+h4{
+    margin: 0.7em;
+    #mixins.headerfour(@hfont_family, @h4font_size, @red);
 }
 
 p{
@@ -235,17 +287,59 @@ p{
     margin: @pmargin;   
 }
 
+#contact {
+    margin: @pmargin;
+}
+
 ul{
     font-family: @pfont_family;
     font-size: @pfont_size;
     list-style: none;
 }
 
-aside{
+table{
+    width: 100%;
+    border: solid 0.1em @grey;
+}
+th{
+    color: @red;
+    text-align: left;
+    border: solid 0.1em @grey;
+    font-family: @hfont_family;
+}
+td{
+    color: @black;
+    text-align: left;
+    border: solid 0.1em @grey;
+    font-family: @pfont_family
+}
+
+
+/*FAQ & Description pages*/
+dt{
+    margin: 0.5em;
     font-family: @pfont_family;
-    clear: both;
-    display: flex;
-    /*border: 1.5px solid @red;*/
+    color: @red;
+    font-size: @h2font_size;
+}
+dd{
+    margin: 1em;
+    font-family: @pfont_family;
+    color: @black;
+    font-size: @pfont_size;
+}
+
+blockquote{
+    font-family: @pfont_family;
+    color: @black;
+    font-weight: bold;    
+}
+
+
+
+
+.sidebar{
+    display: none;
 }
 
 footer{
@@ -254,22 +348,93 @@ footer{
     margin-bottom: 1px;
 }
 
+
+
+
+
 /*TABLET*/
 @media only screen and (min-width: 600px){ 
     
-    aside{
-        float: right;
-        display: flex;
+    /*Slideshow*/
+    article {
+        max-width: 600px;
+        height: 500px;
+        padding-bottom: 2px;
     }
+    .dot {
+        height: 20px;
+        width: 20px;
+        margin-top: 4px;
+    }
+    
+    /*Hamburger*/
+    .hamburger{
+        line-height:65px;
+        padding:10px 20px 0px 20px;
+        font-size:3em;
+    }
+    .cross{ 
+        font-size:6em;
+        line-height:90px;
+    }
+    .menu {
+        font-size: 2em;
+    }
+    /*end hamburger*/
+    
+    table{
+        width: 60%;
+        margin: 1em;
+    }
+    
+    p,li,th,td{
+        font-size: 1.5em;
+    }
+    
+    .sidebar{
+        display:block;
+        float: right;
+        width: 30%;
+        margin: 0 1.5%
+    } 
+    .fb{
+        display: block;
+    }
+    .twitter{
+        display: block;
+    }
+    
+    .sm{
+        display: none;
+    }
+
 
 }
 
 /*DESKTOP*/
 @media only screen and (min-width: 1025px){
     
-    aside{
-        float: right;
-        display: flex;
+    /*Slideshow*/
+    article {
+        min-height: 900px;
+        min-width: 800px;
     }
+    
+        
+    .fb{
+        margin-left: 5em;
+    }
+    
+    dt{
+       font-size: 3em;
+    }
+    dd, blockquote{
+        font-size: 2em;
+    }
+    
+
+    
+    
+
     
 }

@@ -26,38 +26,58 @@
     <br>
                     
     <main>
-        <h1>Registration for Athletes and Volunteers</h1>
+        <h2>Registration for Athletes and Volunteers</h2>
         
-      <p>Required fields are marked with an asterisk (*).<p><br>
-      <div id="registration">
-      <form method="post" action=" ">
+        <p>Required fields are marked with an asterisk (*).</p>
+        <div id="registration">
+            <form method="post" action=" ">
           
-        <label for="status">*Athlete or Volunteer:</label>
-            <input type="text" name="status" id="status" required><br><br>
-        <label for="myfname">*First Name:</label>
-          <input type="text" name="fname" id="fname" required><br><br>
-        <label for="mylname">*Last Name:</label>
-          <input type="text" name="lname" id="lname" required><br><br>
-        <label for="myemail">*Email Address:</label>
-          <input type="email" name="email" id="email" required><br><br>
-        <label for="phone">*Phone Number:</label>
-          <input type="int" name="phone" id="phone" required><br><br>
-        <label for="event">*Saturday or Sunday:</label>
-            <input type="text" name="event" id="event" required><br><br>
-        <label for="emergencyName">*Emergency Contact Name:</label>
-          <input type="text" name="ename" id="ename" required><br><br>
-        <label for="emergencyNumber">*Emergency Contact Phone:</label>
-          <input type="int" name="enumber" id="enumber" required><br><br>
-        <label for="shirtSize">*Shirt Size S, M, L, XL:</label>
-          <input type="text" name="shirt" id="shirt" required><br><br>
-        <label for="gender">*Gender:</label>
-          <input type="text" name="gender" id="gender" required><br><br>
-        <label for="mycomments">Comments or Questions?</label>
-          <textarea name="comments" id="comments" rows="3" cols="30"></textarea><br><br>
-          <input id="mysubmit" type="submit" value="Submit">
-          
-      </form>
-      </div>
+            <label for="status">*Athlete or Volunteer:</label><br>
+                <input type="radio" name="status" value="athlete">Athlete<br>
+                <input type="radio" name="status" value="volunteer">Volunteer<br><br>
+            <label for="myfname">*First Name:</label>
+                <input type="text" name="fname" id="fname" required><br><br>
+            <label for="mylname">*Last Name:</label>
+                <input type="text" name="lname" id="lname" required><br><br>
+            <label for="gender">*Gender:</label><br>
+                <input type="radio" name="gender" value="male">Male<br>
+                <input type="radio" name="gender" value="female">Female<br>
+                <input type="radio" name="gender" value="nonbinary">NonBinary<br><br>
+            <label for="myemail">*Email Address:</label>
+                <input type="email" name="email" id="email" required><br><br>
+            <label for="phone">*Phone Number(no dashes):</label>
+                <input type="tel" name="phone" id="phone" required><br><br>
+            <label for="event">Choose your Saturday event:</label>
+                <select name="event">
+                    <option value="xx">Select One</option>
+                    <option value="SATlct">SATURDAY Long Course Triathalon &nbsp; 7:00am</option>
+                    <option value="SATot">SATURDAY Olympic Triathalon &nbsp; 7:30am</option>
+                    <option value="SAT10K">SATURDAY 10K &nbsp; 7:15am</option>
+                    <option value="SAThm">SATURDAY Half Marathon &nbsp; 7:15am</option><br>
+                </select><br><br>
+           <label for="eventTwo">Choose your Sunday event:</label>
+                <select name="eventTwo">
+                    <option value="xx">Select One</option>
+                    <option value="SUNst">SUNDAY Sprint Triathalon &nbsp; 8:00am</option>
+                    <option value="SUNtat">SUNDAY Try-a-Tri &nbsp; 8:20am</option>
+                    <option value="SUNsd">SUNDAY Splash n Dash &nbsp; 12:00pm</option>
+                </select>
+                <br><br>
+            <label for="emergencyName">*Emergency Contact Name:</label>
+                <input type="text" name="ename" id="ename" required><br><br>
+            <label for="emergencyNumber">*Emergency Contact Phone (no dashes):</label>
+                <input type="tel" name="enumber" id="enumber" required><br><br>
+            <label for="shirtSize">*Shirt Size S, M, L, XL:</label>
+                <select name="shirt">
+                    <option value="xx" required>Select One</option>
+                    <option value="s">Small</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Large</option>
+                    <option value="xl">Extra Large</option>
+                </select><br><br>
+            <input id="mysubmit" type="submit" value="Submit">
+            </form>
+         </div>
         <br><br><br>
     </main>
     

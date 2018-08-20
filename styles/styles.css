@@ -9,8 +9,9 @@
 /*COLORS*/
 /*MARGINS*/
 /*SELECTORS*/
-header {
-  font-family: 'Paytone One', sans-serif;
+.responsive {
+  width: 100%;
+  height: auto;
 }
 body {
   margin: 0.05em;
@@ -20,8 +21,12 @@ main {
   background-color: #ffffff;
 }
 h1 {
+  margin: 0.5em;
   font-family: 'Paytone One', sans-serif;
-  font-size: 1.5em;
+  font-size: 6vw;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: inherit;
 }
 nav {
   font-family: 'Muli', sans-serif;
@@ -182,14 +187,51 @@ article {
   }
 }
 /*END Slideshow*/
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+/* Set a specific color for each brand */
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
 h2 {
-  margin: 0.5em;
+  padding-top: 0.5em;
+  margin-left: 0.4em;
   font-family: 'Paytone One', sans-serif;
-  font-size: 1.3em;
+  font-size: 5vw;
+  color: #ff0000;
+}
+h3 {
+  margin: 0.7em;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 4vw;
+  color: #ff0000;
+}
+h4 {
+  margin: 0.7em;
+  font-family: 'Paytone One', sans-serif;
+  font-size: 3vw;
   color: #ff0000;
 }
 p {
-  font-size: 1em;
+  font-size: 0.95em;
   font-family: 'Muli', sans-serif;
   margin: 1.2em;
 }
@@ -202,16 +244,50 @@ p {
   text-align: left;
   margin: 1.2em;
 }
+#contact {
+  margin: 1.2em;
+}
 ul {
   font-family: 'Muli', sans-serif;
-  font-size: 1em;
+  font-size: 0.95em;
   list-style: none;
 }
-aside {
+table {
+  width: 100%;
+  border: solid 0.1em #bfbfbf;
+}
+th {
+  color: #ff0000;
+  text-align: left;
+  border: solid 0.1em #bfbfbf;
+  font-family: 'Paytone One', sans-serif;
+}
+td {
+  color: #000000;
+  text-align: left;
+  border: solid 0.1em #bfbfbf;
   font-family: 'Muli', sans-serif;
-  clear: both;
-  display: flex;
-  /*border: 1.5px solid @red;*/
+}
+/*FAQ & Description pages*/
+dt {
+  margin: 0.5em;
+  font-family: 'Muli', sans-serif;
+  color: #ff0000;
+  font-size: 5vw;
+}
+dd {
+  margin: 1em;
+  font-family: 'Muli', sans-serif;
+  color: #000000;
+  font-size: 0.95em;
+}
+blockquote {
+  font-family: 'Muli', sans-serif;
+  color: #000000;
+  font-weight: bold;
+}
+.sidebar {
+  display: none;
 }
 footer {
   clear: both;
@@ -220,15 +296,72 @@ footer {
 }
 /*TABLET*/
 @media only screen and (min-width: 600px) {
-  aside {
+  /*Slideshow*/
+  article {
+    max-width: 600px;
+    height: 500px;
+    padding-bottom: 2px;
+  }
+  .dot {
+    height: 20px;
+    width: 20px;
+    margin-top: 4px;
+  }
+  /*Hamburger*/
+  .hamburger {
+    line-height: 65px;
+    padding: 10px 20px 0px 20px;
+    font-size: 3em;
+  }
+  .cross {
+    font-size: 6em;
+    line-height: 90px;
+  }
+  .menu {
+    font-size: 2em;
+  }
+  /*end hamburger*/
+  table {
+    width: 60%;
+    margin: 1em;
+  }
+  p,
+  li,
+  th,
+  td {
+    font-size: 1.5em;
+  }
+  .sidebar {
+    display: block;
     float: right;
-    display: flex;
+    width: 30%;
+    margin: 0 1.5%;
+  }
+  .fb {
+    display: block;
+  }
+  .twitter {
+    display: block;
+  }
+  .sm {
+    display: none;
   }
 }
 /*DESKTOP*/
 @media only screen and (min-width: 1025px) {
-  aside {
-    float: right;
-    display: flex;
+  /*Slideshow*/
+  article {
+    min-height: 900px;
+    min-width: 800px;
+  }
+  .fb {
+    margin-left: 5em;
+  }
+  dt {
+    font-size: 3em;
+  }
+  dd,
+  blockquote {
+    font-size: 2em;
   }
 }

@@ -1,6 +1,6 @@
 <?php
 
-//REGISTRATION FORM
+//CONTACT FORM
 
 try
 {
@@ -19,49 +19,28 @@ if(isset($_POST['fname']) and ($_POST['honeypot'] == ''))
 {
     //these variables will be used in Thankyou page
     //$honeypot = $_POST['honeypot'];
-    $status = $_POST['status'];
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $event = $_POST['event'];
-    $eventTwo = $_POST['eventTwo'];
-    $emergencyName = $_POST['ename'];
-    $emergencyNumber = $_POST['enumber'];
-    $shirtSize = $_POST['shirt'];
-    $gender = $_POST['gender'];
+    $comments = $_POST['comments'];
     
     try
     {   //database name = :variable name
-        $sql = 'INSERT INTO registration SET
-            status = :status,
+        $sql = 'INSERT INTO contact SET
             fname = :fname,
             lname = :lname,
             email = :email,
-            phone = :phone,
-            event = :event,
-            eventTwo = :eventTwo,
-            emergencyName = :ename,
-            emergencyNumber = :enumber,
-            shirtSize = :shirt,
-            gender = :gender' ;
+            comments = :comments';
         $s = $pdo->prepare($sql);
-        $s->bindValue(':status', $_POST['status']);
         $s->bindValue(':fname', $_POST['fname']);
         $s->bindValue(':lname', $_POST['lname']);
         $s->bindValue(':email', $_POST['email']);
-        $s->bindValue(':phone', $_POST['phone']);
-        $s->bindValue(':event', $_POST['event']);
-        $s->bindValue(':eventTwo', $_POST['eventTwo']);
-        $s->bindValue(':ename', $_POST['ename']);
-        $s->bindValue(':enumber', $_POST['enumber']);
-        $s->bindValue(':shirt', $_POST['shirt']);
-        $s->bindValue(':gender', $_POST['gender']);
+        $s->bindValue(':comments', $_POST['comments']);
         $s->execute();
     }
     catch (PDOException $e)
     {
-        $error = 'Error adding submitted information to REGISTRATION: ' . $e->getMessage();
+        $error = 'Error adding submitted information: ' . $e->getMessage();
     include '../includes/error.html.php';
     exit();
     }
@@ -73,5 +52,5 @@ if(isset($_POST['fname']) and ($_POST['honeypot'] == ''))
 
 else 
 {
-    include 'registration.html.php';
+    include 'contact.html.php';
 }
