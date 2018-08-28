@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
      
     <link href="styles/styles.less" rel="stylesheet/less" type="text/css">
+    <link href="styles/nav.less" rel="stylesheet/less" type="text/css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js" ></script>
     
 </head>

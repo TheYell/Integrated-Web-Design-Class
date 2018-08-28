@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      
     <link href="styles/styles.less" rel="stylesheet/less" type="text/css">
+    <link href="styles/nav.less" rel="stylesheet/less" type="text/css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js" ></script>
     
 </head>
@@ -23,15 +24,17 @@
 <body>
     
     <?php include 'includes/header.inc.html.php'; ?>
-      
+    
+          
     <main>
-    <?php include 'includes/navigation.inc.html.php'; ?>
+        
+        <?php include 'includes/navigation.inc.html.php'; ?>
     <br>
     <br>
-                
-            <article> <!-- Slideshow container -->
-                <h2>Multisport Weekend: <br>
+                <h2 class="welcome">Multisport Weekend: <br>
                     Run, Bike, and Swim with us!</h2>
+            <article> <!-- Slideshow container -->
+                
             <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade">
                     <div class="numbertext"></div>
@@ -91,8 +94,8 @@
             <a href="https://twitter.com/pcccas222" class="fa fa-twitter"></a>
         </section>
         
-        <?php include 'includes/weather.inc.html.php'; ?>
         
+        <?php include 'includes/weather.inc.html.php'; ?>
         
         <aside class="sidebar">   
                 
