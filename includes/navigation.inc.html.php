@@ -1,22 +1,24 @@
 <!--Hamburger-->
-<nav>
-    <button class="hamburger">&#9776;</button>
-    <button class="cross">&#735;</button>
-</nav>
-    <div class="menu">
-        <ul>
-            <li><a href= "<?php echo BASE_URL; ?>home.html.php">Home</a></li>
-            
-            <li><a href="<?php echo BASE_URL; ?>registration">Registration</a></li>
-            
-            <li><a href="<?php echo BASE_URL; ?>courseDetails.html.php">Course Details</a></li>
-            
-            <li><a href="<?php echo BASE_URL; ?>faq.html.php">Frequently Asked Questions</a></li>
-            
-            <li><a href="<?php echo BASE_URL; ?>contact">Contact Us</a></li>
-        </ul>
-    </div>
-<!--END hamburger-->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/scripts/scripts.js"></script> 
+
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="topnav" id="myTopnav">
+    
+    <a href="<?php echo BASE_URL; ?>home.html.php" class="active">Home</a>
+    
+    <a href="<?php echo BASE_URL; ?>courseDetails.html.php">Course Details</a>
+    
+    <a href="<?php echo BASE_URL; ?>registration">Registration</a>
+    
+    <a href="<?php echo BASE_URL; ?>faq.html.php">Frequently Asked Questions</a>
+    
+    <a href="<?php echo BASE_URL; ?>contact">Contact Us</a>
+    
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!--END hamburger-->

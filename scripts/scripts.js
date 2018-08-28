@@ -11,24 +11,14 @@
 //alert("the link to the .js file is correct!");
 
 //HAMBURGER
-$(document).ready(function () {
-
-    $(".cross").hide();
-    $(".menu").hide();
-    $(".hamburger").click(function () {
-        $(".menu").slideToggle("slow", function () {
-            $(".hamburger").hide();
-            $(".cross").show();
-        });
-    });
-
-    $(".cross").click(function () {
-        $(".menu").slideToggle("slow", function () {
-            $(".cross").hide();
-            $(".hamburger").show();
-        });
-    });
-});
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
 
 
 

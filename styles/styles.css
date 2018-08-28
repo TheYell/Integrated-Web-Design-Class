@@ -31,83 +31,14 @@ h1 {
 nav {
   font-family: 'Muli', sans-serif;
 }
-/* Hamburger menu */
-.hamburger {
-  background: none;
-  position: absolute;
-  line-height: 45px;
-  padding: 5px 15px 0px 15px;
-  color: #999;
-  border: 0;
-  font-size: 1.4em;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  z-index: 10000000000000;
-}
-.cross {
-  background: none;
-  position: absolute;
-  padding: 7px 15px 0px 15px;
-  color: #999;
-  border: 0;
-  font-size: 3em;
-  line-height: 65px;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  z-index: 10000000000000;
-}
-.menu {
-  z-index: 1000000;
-  font-weight: bold;
-  font-size: 0.8em;
-  width: 100%;
-  background: #f1f1f1;
-  /*position:absolute;*/
+.welcome {
   text-align: center;
-  font-size: 12px;
 }
-.menu ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  list-style-image: none;
-}
-.menu li {
-  display: block;
-  padding: 15px 0 15px 0;
-  border-bottom: #dddddd 1px solid;
-}
-.menu li:hover {
-  display: block;
-  background: #ffffff;
-  padding: 15px 0 15px 0;
-  border-bottom: #dddddd 1px solid;
-}
-.menu ul li a {
-  text-decoration: none;
-  margin: 0px;
-  color: #000000;
-}
-.menu ul li a:hover {
-  color: #000000;
-  text-decoration: none;
-}
-.menu a {
-  text-decoration: none;
-  color: #ff0000;
-}
-.menu a:hover {
-  text-decoration: none;
-  color: #000000;
-}
-/*END Hamburger*/
 /*SLIDESHOW*/
 /* Slideshow container */
 article {
   max-width: 500px;
-  height: 400px;
+  height: 300px;
   position: relative;
   margin: auto;
 }
@@ -244,9 +175,17 @@ p {
   text-align: left;
   margin: 1.2em;
 }
+/*Contact forms*/
 #contact {
   margin: 1.2em;
 }
+label {
+  padding: 12px 12px 12px 0;
+  float: left;
+  clear: both;
+  width: 200px;
+}
+/*End Contact Forms*/
 ul {
   font-family: 'Muli', sans-serif;
   font-size: 0.95em;
@@ -306,21 +245,11 @@ footer {
     height: 20px;
     width: 20px;
     margin-top: 4px;
+    padding-bottom: 2px;
   }
-  /*Hamburger*/
-  .hamburger {
-    line-height: 65px;
-    padding: 10px 20px 0px 20px;
-    font-size: 3em;
+  .mySlides img {
+    max-height: 340px;
   }
-  .cross {
-    font-size: 6em;
-    line-height: 90px;
-  }
-  .menu {
-    font-size: 2em;
-  }
-  /*end hamburger*/
   table {
     width: 60%;
     margin: 1em;
@@ -348,11 +277,17 @@ footer {
   }
 }
 /*DESKTOP*/
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
+  .responsive {
+    height: 60em;
+  }
   /*Slideshow*/
   article {
-    min-height: 900px;
+    min-height: 400px;
     min-width: 800px;
+  }
+  .mySlides img {
+    min-height: 30em;
   }
   .fb {
     margin-left: 5em;
@@ -363,5 +298,17 @@ footer {
   dd,
   blockquote {
     font-size: 2em;
+  }
+}
+/*LARGE DESKTOP*/
+@media only screen and (min-width: 1500px) {
+  .responsive {
+    height: 53em;
+  }
+  article {
+    min-height: 700px;
+  }
+  .mySlides img {
+    min-height: 40em;
   }
 }
