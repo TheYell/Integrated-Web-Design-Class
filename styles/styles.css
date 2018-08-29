@@ -9,9 +9,14 @@
 /*COLORS*/
 /*MARGINS*/
 /*SELECTORS*/
-.responsive {
-  width: 100%;
-  height: auto;
+header {
+  background-image: url(../images/waterbottle.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  margin-top: 0;
+  position: relative;
 }
 body {
   margin: 0.05em;
@@ -21,12 +26,13 @@ main {
   background-color: #ffffff;
 }
 h1 {
-  margin: 0.5em;
   font-family: 'Paytone One', sans-serif;
   font-size: 6vw;
   color: #ffffff;
   text-align: center;
   letter-spacing: inherit;
+  margin: 0.1em;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
 }
 nav {
   font-family: 'Muli', sans-serif;
@@ -170,21 +176,27 @@ p {
   color: #000000;
   font-size: 1em;
   font-family: 'Muli', sans-serif;
-  padding-top: 3em;
+  padding-top: 5em;
   display: block;
   text-align: left;
   margin: 1.2em;
+}
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
 }
 /*Contact forms*/
 #contact {
   margin: 1.2em;
 }
-label {
-  padding: 12px 12px 12px 0;
-  float: left;
-  clear: both;
-  width: 200px;
+/*label{
+    padding: 12px 12px 12px 0;
+    float: left;
+    clear: both;
+    width: 200px;
 }
+
 /*End Contact Forms*/
 ul {
   font-family: 'Muli', sans-serif;
@@ -235,6 +247,11 @@ footer {
 }
 /*TABLET*/
 @media only screen and (min-width: 600px) {
+  h1 {
+    text-align: left;
+    position: absolute;
+    top: 80%;
+  }
   /*Slideshow*/
   article {
     max-width: 600px;
@@ -278,8 +295,8 @@ footer {
 }
 /*DESKTOP*/
 @media only screen and (min-width: 1024px) {
-  .responsive {
-    height: 60em;
+  header {
+    height: 500px;
   }
   /*Slideshow*/
   article {
@@ -302,8 +319,9 @@ footer {
 }
 /*LARGE DESKTOP*/
 @media only screen and (min-width: 1500px) {
-  .responsive {
-    height: 53em;
+  header {
+    height: 950px;
+    top: 82%;
   }
   article {
     min-height: 700px;

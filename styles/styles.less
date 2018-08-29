@@ -32,12 +32,15 @@
 
 /*SELECTORS*/
 header{
+    background-image: url(../images/waterbottle.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    margin-top: 0;
+    position: relative;
 }
 
-.responsive{
-    width: 100%;
-    height: auto;
-}
 
 body {
     margin: @bmargin;
@@ -49,10 +52,15 @@ main{
 }
 
 h1{
-    margin: 0.5em;
     #mixins.headerone(@hfont_family, @h1font_size, @white);
     text-align: center;
     letter-spacing: inherit;
+    margin: 0.1em;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
 }
 
 nav{
@@ -209,17 +217,22 @@ p{
     color: @black;
     font-size: 1em;
     font-family: @pfont_family;
-    padding-top: 3em;
+    padding-top: 5em;
     display: block;
     text-align: left;
     margin: @pmargin;   
+}
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
 }
 
 /*Contact forms*/
 #contact {
     margin: @pmargin;
 }
-label{
+/*label{
     padding: 12px 12px 12px 0;
     float: left;
     clear: both;
@@ -293,6 +306,12 @@ footer{
 /*TABLET*/
 @media only screen and (min-width: 600px){ 
     
+    h1{
+        text-align: left;
+        position: absolute;
+        top: 80%;
+    }
+    
     /*Slideshow*/
     article {
         max-width: 600px;
@@ -343,9 +362,9 @@ footer{
 
 /*DESKTOP*/
 @media only screen and (min-width: 1024px){
-    .responsive{
-    height: 60em;
-    } 
+    header{
+        height: 500px;
+    }
     
     
     /*Slideshow*/
@@ -374,8 +393,9 @@ footer{
 
 /*LARGE DESKTOP*/
 @media only screen and (min-width: 1500px){
-    .responsive{
-        height: 53em;
+    header{
+        height: 950px;
+        top:82%;
     }
     
     article{
