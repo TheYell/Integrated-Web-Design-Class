@@ -21,11 +21,12 @@
 <body>
     
     <?php include 'includes/header.inc.html.php'; ?>
-        
-    <?php include 'includes/navigation.inc.html.php'; ?>
-    <br>
-    <br>
+          
     <main>
+        
+        <?php include 'includes/navigation.inc.html.php'; ?>
+    <br>
+    <br>
            
     <section>
         

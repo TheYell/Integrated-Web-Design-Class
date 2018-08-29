@@ -24,7 +24,6 @@
 <body>
     
     <?php include 'includes/header.inc.html.php'; ?>
-    
           
     <main>
         
